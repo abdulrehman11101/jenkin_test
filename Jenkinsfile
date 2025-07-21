@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'npm install'  // Replace with your build command
+                sh 'gradle build'  // Replace with your build command
             }
         }
         stage('Test') {
