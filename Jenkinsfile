@@ -8,14 +8,19 @@ pipeline {
                     credentialsId: 'b83b77f5-f4e1-4d8a-8b41-896c81213b9c'
             }
         }
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'  // Installs all package.json dependencies
+            }
+        }
         stage('Build') {
             steps {
-                sh 'gradle build'  // Replace with your build command
+                sh 'npm run build'  // Runs the "build" script from package.json
             }
         }
         stage('Test') {
             steps {
-                sh 'mvn test'
+                sh 'npm test'  // Runs the "test" script from package.json
             }
         }
     }
