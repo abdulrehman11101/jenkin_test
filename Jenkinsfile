@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'  // Replace with your build command
+                sh 'npm install'  // Replace with your build command
             }
         }
         stage('Test') {
